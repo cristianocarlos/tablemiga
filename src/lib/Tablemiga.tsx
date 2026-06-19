@@ -71,7 +71,7 @@ export default function Tablemiga<GRowData = TTableData>(props: TTablemigaProps<
   if (!rows) return <BackgroundFallback className="h-40" />;
 
   return (
-    <div className={`mf__tablemiga`}>
+    <div>
       {rows.length === 0 ? (
         <div className="agg--message-smooth">{YiiLang.tablemiga('textNotFound')}</div>
       ) : (

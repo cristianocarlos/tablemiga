@@ -1,5 +1,6 @@
 import type {TTableData, TTableId} from '@/types/common';
 import type {TDBValue} from '@/types/db-schema';
+import type {TKeysOfType} from '@/types/helper';
 import type {ReactNode} from 'react';
 
 /** **********************************************
@@ -25,16 +26,7 @@ export type TTablemigaColumnData<GRowData> = {
   label?: string;
   noWrap?: boolean;
   render?: (rowData: GRowData, rowDataId: TTableId) => ReactNode;
-  type?:
-    | 'currency'
-    | 'date'
-    | 'dateHour'
-    | 'dateLog'
-    | 'hour'
-    | 'integer'
-    | 'name'
-    | 'phoneNumber'
-    | 'text';
+  type?: 'currency' | 'date' | 'dateHour' | 'dateLog' | 'hour' | 'integer' | 'name' | 'phoneNumber' | 'text';
   width?: number;
 };
 
@@ -80,7 +72,7 @@ export type TTablemigaProps<GRowData> = {
     rowData: GRowData;
   }) => ReactNode;
   columns: TTablemigaColumnRows<GRowData>;
-  idKey: keyof GRowData;
+  idKey: TKeysOfType<GRowData, number | string>; // Tem que ser uma coluna existente, somente dos tipos numero ou string
   labels?: TTablemigaLabels;
   rowClassNameFn?: (data: GRowData) => string | undefined;
   rows?: Array<GRowData>;
