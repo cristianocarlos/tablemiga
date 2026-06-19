@@ -7,9 +7,9 @@ import YiiLang from '@/utils/yii-lang';
 import type {TTablemigaColumnData, TTablemigaColumnRenderer, TTablemigaProps} from '@/lib/types';
 import type {TTableData, TTableId} from '@/types/common';
 
-export function rowInactiveClassNameHof<GRowData>(statusKey: string, inavtiveValue: boolean | number | string) {
+export function rowInactiveClassNameHof<GRowData>(statusKey: keyof GRowData, inactiveValue: boolean | number | string) {
   return (data: GRowData) => {
-    return data[statusKey as keyof typeof data] === inavtiveValue ? 'opacity-50' : undefined;
+    return data[statusKey as keyof typeof data] === inactiveValue ? 'opacity-50' : undefined;
   };
 }
 

@@ -10,7 +10,7 @@ export type TTablemigaOptimizedWidths = {[p: string]: Array<number>};
 
 export type TTablemigaColumnData<GRowData> = {
   columnKey:
-    | '_custom_column_key'
+    | '_custom_column_key0'
     | '_custom_column_key1'
     | '_custom_column_key2'
     | '_custom_column_key3'
