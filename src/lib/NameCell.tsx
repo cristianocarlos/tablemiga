@@ -1,7 +1,7 @@
-export default function NameCell({id, value}: {id?: number; value: string}) {
+export default function NameCell({children, id}: {children: string; id?: number}) {
   return (
     <>
-      <span>{value}</span>
+      <span>{children}</span>
       {id ? <span className="text-[0.64em] font-thin text-gray-500">{' ' + id}</span> : undefined}
     </>
   );

@@ -53,7 +53,7 @@ export default function TablemigaRow<GRowData>(props: TTableRow<GRowData>) {
         const fnClassName = columnClassNameFn?.({additionalRowData, columnData, rowData}) || '';
         return (
           <td
-            className={`h-14 border-b border-b-gray-200 px-1 py-2 leading-tight first:pr-0 first:pl-0 ${fnClassName} ${columnData.noWrap ? 'tablemiga--no-wrap' : ''}`}
+            className={`h-14 border-b border-b-gray-200 px-1 py-2 leading-tight first:pr-0 first:pl-0 ${fnClassName} ${columnData.noWrap ? 'overflow-hidden text-ellipsis whitespace-nowrap' : ''}`}
             key={String(columnData.columnKey)}
             style={style}
             title={columnData.noWrap && typeof value === 'string' ? value : undefined}

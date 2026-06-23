@@ -73,9 +73,9 @@ export default function Tablemiga<GRowData = TTableData>(props: TTablemigaProps<
   return (
     <div>
       {rows.length === 0 ? (
-        <div className="agg--message-smooth">{YiiLang.tablemiga('textNotFound')}</div>
+        <div className="text-gray-400">{YiiLang.tablemiga('textNotFound')}</div>
       ) : (
-        <div className="rounded-2xl bg-white px-8 py-2 shadow-lg max-sm:px-5 max-sm:py-1">
+        <div className="rounded-2xl bg-white px-8 py-2 shadow-lg max-sm:px-5 max-sm:py-1 text-sm">
           <table className="w-full border-collapse bg-white">
             <thead className="max-sm:hidden">
               <tr>
@@ -88,7 +88,7 @@ export default function Tablemiga<GRowData = TTableData>(props: TTablemigaProps<
                   const resolvedColumnKey = String(columnData.columnKey); // é sempre string, mas por algum motivo não da pra dizer isso no keyof
                   return (
                     <td
-                      className="tablemiga--no-wrap border-b-tablemiga--theme tablemiga--head-sticky h-14 border-b bg-white px-1 py-2 text-sm leading-tight font-medium text-gray-600 first:pr-0 first:pl-0"
+                      className="border-b-tablemiga--theme sticky top-0 z-[var(--z-tablemiga--head-sticky)] h-14 overflow-hidden border-b bg-white px-1 py-2 leading-tight font-medium text-ellipsis whitespace-nowrap text-gray-600 first:pr-0 first:pl-0"
                       key={resolvedColumnKey}
                       style={style}
                       title={labels?.[resolvedColumnKey]}

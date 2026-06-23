@@ -36,16 +36,16 @@ export default function TablemigaCol<GRowData>(props: TTableCol<GRowData>) {
       return formatDateHour(value);
     case 'dateLog': // Diferente do dateHour, só apresenta a hora no hint e o ano quando é diferente do atual
       if (!valueIsString) return emptyChar(value);
-      return <DateLogCell value={value} />;
+      return <DateLogCell>{value}</DateLogCell>;
     case 'hour': // Diferente do dateHour, só apresenta o dia e ano quando diferentes do atual
       if (!valueIsString) return emptyChar(value);
-      return <HourCell value={value} />;
+      return <HourCell>{value}</HourCell>;
     case 'integer':
       if (!valueIsNumber) return emptyChar(value);
       return emptyCharWhenZero(formatInteger(value));
     case 'name': {
       if (!valueIsString) return emptyChar(value);
-      return <NameCell id={columnValueId} value={value} />;
+      return <NameCell id={columnValueId}>{value}</NameCell>;
     }
     case 'phoneNumber':
       if (!valueIsNumberOrString) return emptyChar(value);

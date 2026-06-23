@@ -23,7 +23,6 @@ export type TTablemigaColumnData<GRowData> = {
     | keyof GRowData;
   id?: number | string; // Vem do servidor quando usa arrangement
   idKey?: keyof GRowData;
-  label?: string;
   noWrap?: boolean;
   render?: (rowData: GRowData, rowDataId: TTableId) => ReactNode;
   type?: 'currency' | 'date' | 'dateHour' | 'dateLog' | 'hour' | 'integer' | 'name' | 'phoneNumber' | 'text';
