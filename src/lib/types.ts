@@ -1,4 +1,4 @@
-import type {TTableData, TTableId} from '@/types/common';
+import type {TTableId} from '@/types/common';
 import type {TDBValue} from '@/types/db-schema';
 import type {TKeysOfType} from '@/types/helper';
 import type {ReactNode} from 'react';
@@ -6,8 +6,6 @@ import type {ReactNode} from 'react';
 /** **********************************************
  * * *
  *********************************************** */
-
-export type TTablemigaOptimizedWidths = {[p: string]: Array<number>};
 
 export type TTablemigaColumnData<GRowData> = {
   columnKey:
@@ -31,13 +29,7 @@ export type TTablemigaColumnData<GRowData> = {
 
 export type TTablemigaColumnRows<GRowData> = Array<TTablemigaColumnData<GRowData>>;
 
-export type TTablemigaRows = Array<TTableData>;
-export type TTablemigaLabels = {[p: string]: string};
-
-export type TTablemigaDataGridColumnData<GRowData> = {
-  dataGridColumns: TTablemigaColumnRows<GRowData>;
-  defaultDataGridColumns: TTablemigaColumnRows<GRowData>;
-};
+type TTablemigaLabels = {[p: string]: string};
 
 export type TTablemigaColumnRenderer<GRowData> = (params: {
   additionalRowData?: Partial<GRowData>;

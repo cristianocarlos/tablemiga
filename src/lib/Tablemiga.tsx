@@ -75,7 +75,7 @@ export default function Tablemiga<GRowData = TTableData>(props: TTablemigaProps<
       {rows.length === 0 ? (
         <div className="text-gray-400">{YiiLang.tablemiga('textNotFound')}</div>
       ) : (
-        <div className="rounded-2xl bg-white px-8 py-2 shadow-lg max-sm:px-5 max-sm:py-1 text-sm">
+        <div className="rounded-2xl bg-white px-8 py-2 text-sm shadow-lg max-sm:px-5 max-sm:py-1">
           <table className="w-full border-collapse bg-white">
             <thead className="max-sm:hidden">
               <tr>
